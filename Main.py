@@ -15,7 +15,6 @@ class HelloWindow(QMainWindow):
         QMainWindow.__init__(self, None, QtCore.Qt.WindowStaysOnTopHint)
 
         self.timeLab = QLabel(self)
-
         # self.setMinimumSize(QSize(640, 480))
         self.setWindowTitle("CSU Global")
 
