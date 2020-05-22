@@ -14,10 +14,9 @@ class HelloWindow ( QMainWindow ) :
         self.timeLab.setText ( localtime )
 
     def __init__(self) :
-        QMainWindow.__init__ ( self, None, QtCore.Qt.WindowStaysOnTopHint )
+        self.SetMainStyle()
 
-        # self.setMinimumSize(QSize(640, 480))
-        self.setWindowTitle ( "CSU Global" )
+        self.setWindowTitle ( "CSU" )
 
         central_widget = QWidget ( self )
         self.setCentralWidget ( central_widget )
@@ -26,17 +25,20 @@ class HelloWindow ( QMainWindow ) :
         central_widget.setLayout ( grid_layout )
 
         self.CreateTimeDisplay ( grid_layout )
-
-        self.SetStyles ()
+        self.SetDateDisplayStyles ()
         self.SetSize ()
         self.StartTimeUpdates ()
 
+    def SetMainStyle(self):
+        QMainWindow.__init__(self, None, QtCore.Qt.WindowStaysOnTopHint)
+
     def CreateTimeDisplay(self, grid_layout) :
         self.timeLab = QLabel ( 'Pending Time', self )
+        self.timeLab.setFont(QtGui.QFont('SansSerif', 18))
         self.timeLab.setAlignment ( QtCore.Qt.AlignCenter )
         grid_layout.addWidget ( self.timeLab, 0, 0 )
 
-    def SetStyles(self) :
+    def SetDateDisplayStyles(self) :
         self.timeLab.setStyleSheet ( "background-color: yellow;border: 1px solid" )
 
     def SetSize(self) :
