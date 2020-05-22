@@ -10,8 +10,10 @@ import time
 class HelloWindow ( QMainWindow ) :
 
     def handleTimer(self) :
-        localtime = time.asctime ( time.localtime ( time.time () ) )
+        lTime = time.localtime ( time.time () )
+        localtime = time.asctime ( lTime )
         self.timeLab.setText ( localtime )
+        self.SetSize ( lTime )
 
     def __init__(self) :
         self.SetMainStyle()
@@ -26,7 +28,7 @@ class HelloWindow ( QMainWindow ) :
 
         self.CreateTimeDisplay ( grid_layout )
         self.SetDateDisplayStyles ()
-        self.SetSize ()
+        self.SetSize ( time.localtime ( time.time () ) )
         self.StartTimeUpdates ()
 
     def SetMainStyle(self):
@@ -34,17 +36,19 @@ class HelloWindow ( QMainWindow ) :
 
     def CreateTimeDisplay(self, grid_layout) :
         self.timeLab = QLabel ( 'Pending Time', self )
-        self.timeLab.setFont(QtGui.QFont('SansSerif', 18))
+        self.timeLab.setFont ( QtGui.QFont ( 'SansSerif', 18 ) )
         self.timeLab.setAlignment ( QtCore.Qt.AlignCenter )
         grid_layout.addWidget ( self.timeLab, 0, 0 )
 
     def SetDateDisplayStyles(self) :
         self.timeLab.setStyleSheet ( "background-color: yellow;border: 1px solid" )
 
-    def SetSize(self) :
-        localtime = time.asctime ( time.localtime ( time.time () ) )
+    def SetSize(self, tTime) :
+        marg = 0.25
+        localtime = time.asctime ( tTime )
         metrics = QtGui.QFontMetrics ( self.timeLab.font () )
-        twidth = metrics.boundingRect ( localtime ).width ()
+        w = metrics.boundingRect ( localtime ).width ()
+        twidth = w + (w * marg)
         theight = metrics.boundingRect ( localtime ).height ()
 
         self.setMinimumWidth ( twidth )
