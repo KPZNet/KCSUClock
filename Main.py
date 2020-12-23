@@ -41,7 +41,8 @@ class HelloWindow ( QMainWindow ) :
         grid_layout.addWidget ( self.timeLab, 0, 0 )
 
     def SetDateDisplayStyles(self) :
-        self.timeLab.setStyleSheet ( "background-color: yellow;border: 1px solid" )
+        #self.timeLab.setStyleSheet ( "background-color: yellow;border: 1px solid" )
+        self.timeLab.setStyleSheet("color: black;  background-color: yellow")
 
     def SetSize(self, tTime) :
         marg = 0.25
