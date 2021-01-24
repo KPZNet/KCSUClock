@@ -18,7 +18,7 @@ class HelloWindow ( QMainWindow ) :
     def __init__(self) :
         self.SetMainStyle()
 
-        self.setWindowTitle ( "CSU" )
+        self.setWindowTitle ( "CSU Timestamp Clock" )
 
         central_widget = QWidget ( self )
         self.setCentralWidget ( central_widget )
