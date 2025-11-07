@@ -6,6 +6,7 @@ from PyQt5.QtCore import QSize
 from PyQt5.QtCore import QTimer
 import time
 
+# commentt
 # CSU Timestamp Clock Application
 class HelloWindow ( QMainWindow ) :
 
