@@ -8,6 +8,7 @@ import time
 
 # commentt
 # CSU Timestamp Clock Application
+#jalskdfjl;a
 class HelloWindow ( QMainWindow ) :
 
     def handleTimer(self) :
