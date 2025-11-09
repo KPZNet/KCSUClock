@@ -6,6 +6,9 @@ from PyQt5.QtCore import QSize
 from PyQt5.QtCore import QTimer
 import time
 
+# COMMENTS 11-8 6:49
+
+
 # commentt
 # CSU Timestamp Clock Application
 #jalskdfjl;a
